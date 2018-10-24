@@ -1,3 +1,5 @@
+//entry point into our application. This is the file that node will execute
+
 var fs = require('fs'),
     http = require('http'),
     path = require('path'),
@@ -42,7 +44,7 @@ app.use(require('./routes'));
 
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  var err = new Error('Not Found');
+  var err = new Error('Not Found boo');
   err.status = 404;
   next(err);
 });
