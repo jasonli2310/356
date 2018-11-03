@@ -1,16 +1,12 @@
 <template>
   <div class="posts">
     This file will list all the posts.ssss
-    
-    
     <div v-for="post in posts">
-      <!-- <p>
+      <p>
         {{post.title}}
         <br>
         {{post.description}}
-      </p> -->
-      
-      {{post}}
+      </p>
     </div>
     
   </div>
@@ -30,7 +26,7 @@ export default {
   }, 
   
   methods:{
-    async getPosts(){
+    async getPosts(){ 
       const response = await PostsService.fetchPosts()
       this.posts = response.data
     }
