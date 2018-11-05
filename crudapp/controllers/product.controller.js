@@ -24,6 +24,7 @@ exports.product_create = function(req, res) {
 };
 
 
+//find product
 exports.product_details = function(req, res){
   Product.findById(req.params.id, function(err, product) {
     if (err) return next(err);
@@ -32,6 +33,7 @@ exports.product_details = function(req, res){
   
 };
 
+//update
 exports.product_update = function(req, res){
     Product.findByIdAndUpdate(req.params.id, {$set: req.body},
       function(err, product) {
@@ -40,6 +42,7 @@ exports.product_update = function(req, res){
       });
 };
 
+//Delete
 exports.product_delete = function (req, res) {
 console.log("trying to delete")
     Product.findByIdAndRemove(req.params.id, function (err) {
