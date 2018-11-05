@@ -7,5 +7,14 @@ export default {
   
   addPost (params) {
     return Api().post('posts', params)
+  },
+  getPost (params) {
+    return Api().get('posts/', params.id)
+  }, 
+  updatePost (params) {
+    return Api().put('posts/' + params.id, params)
+  },
+  deletePost(id){
+    return Api().delete('/posts/'+id)
   }
 }
