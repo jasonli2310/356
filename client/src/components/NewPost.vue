@@ -1,17 +1,15 @@
 <template>
   <div class="posts">
-    <h1>Add Post</h1>
-      <div class="form">
-        <div>
+      <!-- <h1>Whatcha' Thinkin?</h1> -->
+        <!-- <div>
           <input type="text" name="title" placeholder="TITLE" v-model="title">
+        </div> -->
+        <div class="formarea">
+          <textarea rows="15" cols="15" style="border: none" placeholder="Whatcha Thinkin?" v-model="description"></textarea>
         </div>
         <div>
-          <textarea rows="15" cols="15" placeholder="DESCRIPTION" v-model="description"></textarea>
+          <button class="app_post_btn" @click="addPost">this is important enough to share with another human being</button>
         </div>
-        <div>
-          <button class="app_post_btn" @click="addPost">Add</button>
-        </div>
-      </div>
   </div>
 </template>
 
@@ -37,6 +35,19 @@ export default {
 }
 </script>
 <style type="text/css">
+
+textarea {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.formarea{
+  padding: 10px;
+}
+
+
 .form input, .form textarea {
   width: 500px;
   padding: 10px;

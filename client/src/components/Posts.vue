@@ -1,27 +1,27 @@
 <template>
   <div class="posts">
-    <h1>Posts</h1>
-    
+    <!-- <h1>Thots</h1> -->
+
     <div v-if="posts.length > 0" class="table-wrap">
       <!-- add button -->
       <div>
-        <router-link v-bind:to="{ name: 'NewPost' }">Add Post</router-link>
+        <router-link v-bind:to="{ name: 'NewPost' }">got a think?</router-link>
       </div>
-      
+
       <!-- table to print posts -->
       <table>
         <tr>
-          <td>Title</td>
-          <td width="550">Description</td>
-          <td width="100" align="center">Actions</td>
+          <!-- <td>Title</td> -->
+          <!-- <td width="550">thots</td> -->
+          <!-- <td width="100" align="center">Actions</td> -->
         </tr>
         <tr v-for="post in posts">
-          <td>{{post.title}}</td>
+          <!-- <td>{{post.title}}</td> -->
           <td>{{post.description}}</td>
-          <td align="center">
+          <!-- <td align="center">
             <router-link v-bind:to="{ name: 'EditPost', params: { id: post._id } }">Edit</router-link> |
             <a href="#" @click="deletePost(post._id)" >Delete</a>
-          </td>
+          </td> -->
         </tr>
       </table>
     </div>
@@ -43,17 +43,17 @@ export default {
   },
   mounted() {
     this.getPosts()
-  }, 
-  
+  },
+
   methods:{
-    async getPosts(){ 
+    async getPosts(){
       const response = await PostsService.fetchPosts()
       this.posts = response.data.posts
     },
     async deletePost(id){
       await PostsService.deletePost(id)
       this.$router.push({name: 'Posts'})
-      
+
     }
   }
 }
