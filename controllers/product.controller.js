@@ -19,6 +19,16 @@ exports.product_create = function(req, res) {
   res.send('product saved')
 };
 
+exports.allpost = function(req, res){
+
+  Product.find({}, function (error, products) {
+    if (error) { console.error(error); }
+    res.send({
+      product: products
+    })
+  }).sort({_id:-1})
+}
+
 
 exports.product_details = function(req, res){
   Product.findById(req.params.id, function(err, product) {

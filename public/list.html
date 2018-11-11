@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
+
+  <title></title>
+</head>
+<body>
+
+  <div id="example">
+    <li v-for="item in items">
+      <!-- <td>{{post.title}}</td> -->
+    {{item}}
+      <!-- <td align="center">
+      <router-link v-bind:to="{ name: 'EditPost', params: { id: post._id } }">Edit</router-link> |
+      <a href="#" @click="deletePost(post._id)" >Delete</a>
+    </td> -->
+  </li>
+</div>
+
+
+<button type="button" name="button" onclick="performGetRequest2()"> button here</button>
+
+</body>
+
+
+<script>
+
+var vm = new Vue({
+  el: '#example',
+  data: {
+    items: []
+  },
+  created: function () {
+  // `this` points to the vm instance
+  axios.get('http://localhost:1234/products/posts').then(function(response){
+    console.log(response.data.product);
+    vm.items = response.data.product;
+  });
+}
+})
+
+
+
+
+// mounted() {
+//   this.getPosts()
+// },
+// methods:{
+//   async getPosts(){
+//     const response = await PostsService.fetchPosts()
+//     this.posts = response.data.posts
+//   },
+//   async deletePost(id){
+//     await PostsService.deletePost(id)
+//     this.$router.push({name: 'Posts'})
+//   }
+// }
+</script>
+
+<!-- <script>
+
+function performGetRequest2() {
+
+testObject = {
+name: "testtitle",
+price: 4
+}
+
+axios.post('http://localhost:1234/products/create', testObject);
+}
+</script> -->
+</html>
