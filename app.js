@@ -22,7 +22,7 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
-app.use('/', products);
+app.use('/products', products);
 
 let port = 1234;
 app.listen(process.env.PORT ||port, () => {
