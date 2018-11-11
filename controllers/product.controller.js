@@ -2,33 +2,36 @@ const Product = require('../models/product.model');
 
 //Simple version, without validation or sanitation
 exports.test = function (req, res) {
-  res.send('Greetings from the Test controller!');
+  res.send('Greetings from the Test controllerrr!');
 };
 
 //CREATE
 exports.product_create = function(req, res) {
   let product = new Product(
     {
-      name: req.body.name,
-      price: req.body.price
+      // name: req.body.name,
+      // price: req.body.price
+      name: "apples",
+      price: 400
     }
   );
-  
+
   product.save(function(err) {
     if (err) {
       return next(err);
     }
-    res.send('Product Created successfully')
+    res.send('Product Created successfullyyy')
   })
 };
 
 
 exports.product_details = function(req, res){
+  res.send(Product)
   Product.findById(req.params.id, function(err, product) {
     if (err) return next(err);
     res.send(product.name); //returns the name
   })
-  
+
 };
 
 exports.product_update = function(req, res){
@@ -45,4 +48,3 @@ exports.product_delete = function (req, res) {
         res.send('Deleted successfully!');
     })
 };
-
