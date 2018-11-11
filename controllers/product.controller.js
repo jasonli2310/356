@@ -26,10 +26,9 @@ exports.product_create = function(req, res) {
 
 
 exports.product_details = function(req, res){
-  res.send(Product)
   Product.findById(req.params.id, function(err, product) {
     if (err) return next(err);
-    res.send(product.name); //returns the name
+    res.send(product); //returns the name
   })
 
 };
