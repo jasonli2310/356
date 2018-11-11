@@ -8,7 +8,20 @@
   </head>
   <body>
 
-    <button type="button" name="button"> button here</button>
+    <button type="button" name="button" onclick="performGetRequest2()"> button here</button>
 
   </body>
+
+  <script>
+
+    function performGetRequest2() {
+
+    testObject = {
+      name: "testtitle",
+      price: 4
+    }
+
+    axios.post('http://localhost:1234/products/create', testObject);
+  }
+  </script>
 </html>
