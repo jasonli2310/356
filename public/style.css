@@ -1,0 +1,70 @@
+/* font-family: 'Roboto', sans-serif; */
+/* font-family: 'Crimson Text', serif; */
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #60B78799;
+    opacity: 1; /* Firefox */
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+body{
+background-color: #264E2E;
+}
+
+button{
+  border: none;
+  style: none;
+  background: none;
+  padding: 10px;
+  margin: 10px;
+}
+
+
+
+input{
+  width: 100%;
+  background: transparent;
+  style: none;
+  color: #60B78799;
+  border: none;
+  font-weight: 500;
+  border-bottom: 1px;
+}
+
+
+
+/* classes  */
+.sendbutton{
+  color: #60B78799;
+  font-size: 40px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+}
+
+/* Mad specifics  */
+.floatright{
+  float: right;
+}
+
+
+.margintop50{
+  margin-top: 50px;
+}
+
+.fontsize40{
+  font-size: 40px;
+}
+.padding10{
+padding: 10px;
+}
+
+.center {
+    margin: auto;
+    width: 75%;
+}

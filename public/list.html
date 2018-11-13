@@ -9,6 +9,8 @@
 </head>
 <body>
 
+
+
   <div id="example">
     <li v-for="item in items">
       <!-- <td>{{post.title}}</td> -->
@@ -20,6 +22,8 @@
   </li>
 </div>
 
+<input v-model="message" placeholder="edit me">
+<p>Message is: {{ message }}</p>
 
 <button type="button" name="button" onclick="performGetRequest2()"> button here</button>
 
@@ -44,20 +48,15 @@ var vm = new Vue({
 
 
 
+function performGetRequest2(testObject) {
 
-// mounted() {
-//   this.getPosts()
-// },
-// methods:{
-//   async getPosts(){
-//     const response = await PostsService.fetchPosts()
-//     this.posts = response.data.posts
-//   },
-//   async deletePost(id){
-//     await PostsService.deletePost(id)
-//     this.$router.push({name: 'Posts'})
-//   }
-// }
+testObject = {
+  name: "testtitle",
+  price: 4
+}
+
+axios.post('/products/create', testObject);
+}
 </script>
 
 <!-- <script>
