@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 
 const products = require('./routes/product.route'); // Imports routes for the products
 
-const tests = require('./routes/test.route'); // Imports routes for the products
+const test = require('./routes/test.route'); // Imports routes for the products
 
 const app = express();
 
