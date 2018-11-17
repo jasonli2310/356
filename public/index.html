@@ -34,18 +34,26 @@ var vm = new Vue({
   el: '#example',
   data: {
     items: [],
-    message: ''
+    message: '',
+    author: ''
+
   },
   methods: {
     postMessage: function(event){
 
       console.log("oy running")
 
-      testObject = {
-        name: this.message,
-        price: 4
+      var d = Date(),
+
+      thoughtObject = {
+        message: this.message,
+        author: this.author,
+        fullDate: d,
+        location: this.location,
+        responses: this.responses
       }
-      axios.post('/products/create', testObject);
+    //  axios.post('/products/create', testObject);
+      axios.post('/products/create2', thoughtObject)
     }
   },
   created: function () {

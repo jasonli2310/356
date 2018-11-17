@@ -1,4 +1,6 @@
 const Product = require('../models/product.model');
+const Thought = require('../models/product.model');
+
 
 //Simple version, without validation or sanitation
 exports.test = function (req, res) {
@@ -17,6 +19,26 @@ exports.product_create = function(req, res) {
   product.save();
   console.log('okay ba')
   res.send('product saved')
+};
+
+
+exports.thought_create = function(req, res) {
+  let thought = new Thought(
+    {
+      message: req.body.message,
+      author: req.body.author,
+      fullDate: req.body.fullDate,
+      day: req.body.day,
+      date:req.body.date,
+      time: req.body.time,
+      location: req.body.location,
+      responses: req.body.responses
+    }
+  );
+
+  thought.save();
+  console.log('thot saved')
+  res.send('thought saved')
 };
 
 exports.allpost = function(req, res){

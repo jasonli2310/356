@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 let TestMSchema = new Schema({
 name: {type: String, required: true, max: 100},
-price: {type: String, required: true},
+date: {type: String, required: true},
 topic: {type: String}
 //   _id: Schema.Types.ObjectId,
 //   message: {type: String},

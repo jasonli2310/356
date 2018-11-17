@@ -1,17 +1,18 @@
 const TestM = require('../models/test.model');
 
 exports.test2 = function (req, res) {
-    res.send('Greetings from test 21!');
-
+    res.send('Greetings from test 21!' + Date() + "boop" + DategetHours());
 
 };
 
 exports.product_create = function(req, res) {
+
+
   let testobject = new TestM(
     {
       name: 'name21',
-      price: 'asdf',
-      topic: 'topic123'
+      date: Date(),
+      topic: "poop"
     }
   );
 
