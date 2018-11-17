@@ -2,8 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 
 const products = require('./routes/product.route'); // Imports routes for the products
-
-const test = require('./routes/test.route'); // Imports routes for the products
+const tests = require('./routes/test.route'); // Imports routes for the products
 
 const app = express();
 
@@ -23,6 +22,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
 app.use('/products', products);
+
+app.use('/testmodel', tests)
 
 let port = 1234;
 app.listen(process.env.PORT ||port, () => {
