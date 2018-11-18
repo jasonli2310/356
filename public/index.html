@@ -53,7 +53,8 @@ var vm = new Vue({
         responses: this.responses
       }
     //  axios.post('/products/create', testObject);
-      axios.post('/products/create2', thoughtObject)
+      axios.post('/products/create2', thoughtObject);
+      this.message = '';
     }
   },
   created: function () {
