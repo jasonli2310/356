@@ -43,18 +43,27 @@ exports.thought_create = function(req, res) {
 
 exports.allpost = function(req, res){
 
-  Product.find({}, function (error, products) {
+  Product.find({}, function (error, thought) {
     if (error) { console.error(error); }
     res.send({
-      product: products
+      thoughts: thought
     })
   }).sort({_id:-1})
-}
+};
+
+// exports.allthought = function(req, res){
+//
+//   Thought.find({}, function (error, thoughts) {
+//     if (error) { console.error(error); }
+//     res.send({
+//       thought: thoughts
+//     })
+//   }).sort({_id:-1})
+// }
 
 
 exports.product_details = function(req, res){
   Product.findById(req.params.id, function(err, product) {
-    if (err) return next(err);
     res.send(product.name); //returns the name
   })
 

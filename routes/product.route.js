@@ -14,5 +14,7 @@ router.delete('/:id/delete', product_controller.product_delete);
 
 
 router.post('/create2', product_controller.thought_create);
+// router.get('/posts2', product_controller.allthought);
+
 
 module.exports = router;

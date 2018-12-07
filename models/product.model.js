@@ -8,7 +8,7 @@ let ProductSchema = new Schema({
 
 
 let ThoughtSchema = new Schema({
-    message: {type: String},
+    message: {type: String, required: true},
     author: {type: String},
     fullDate: {type: String},
     location: {type: String},
