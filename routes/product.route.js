@@ -12,8 +12,9 @@ router.get('/:id', product_controller.product_details);
 router.put('/:id/update', product_controller.product_update);
 router.delete('/:id/delete', product_controller.product_delete);
 
-
 router.post('/create2', product_controller.thought_create);
+router.post('/sendComment', product_controller.comment_send);
+
 // router.get('/posts2', product_controller.allthought);
 
 

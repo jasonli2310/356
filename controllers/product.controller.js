@@ -1,5 +1,6 @@
 const Product = require('../models/product.model');
 const Thought = require('../models/product.model');
+//const Comment = require('../models/product.model');
 
 
 //Simple version, without validation or sanitation
@@ -66,7 +67,6 @@ exports.product_details = function(req, res){
   Product.findById(req.params.id, function(err, product) {
     res.send(product.name); //returns the name
   })
-
 };
 
 exports.product_update = function(req, res){
@@ -82,4 +82,22 @@ exports.product_update = function(req, res){
       if (err) return next(err);
       res.send('Deleted successfully!');
     })
+  };
+
+
+  // COMMENT FUNCTIONS
+
+  exports.comment_send = function(req, res) {
+    let comment = new Comment(
+      {
+        paragraphId: req.body.paragraphid,
+        message: req.body.message,
+        location: req.body.location,
+        fullDate: req.body.fullDate
+      }
+    );
+
+    comment.save();
+    console.log('comment saved')
+    res.send('comment saved')
   };

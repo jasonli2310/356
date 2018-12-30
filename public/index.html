@@ -11,7 +11,7 @@
 
   <title></title>
 </head>
-<body>
+<body class="greenbackground">
   <div class="container" id="example">
 
     <div class="row margintop50">
@@ -52,6 +52,8 @@ var vm = new Vue({
         location: this.location,
         responses: this.responses
       }
+
+      console.log(thoughtObject)
     //  axios.post('/products/create', testObject);
       axios.post('/products/create2', thoughtObject);
       this.message = '';
