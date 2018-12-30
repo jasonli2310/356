@@ -16,7 +16,7 @@
 
     <div class="row margintop50">
       <div class="center padding10">
-        <input v-model="message" type="text" name="" value="" class="fontsize40" placeholder="whatcha thinkin" onfocus="this.placeholder = ''">
+        <input class="thoughtInputField fontsize40" v-model="message" type="text" name="" value="" placeholder="whatcha thinkin" onfocus="this.placeholder = ''">
       </div>
     </div>
 
@@ -40,9 +40,6 @@ var vm = new Vue({
   },
   methods: {
     postMessage: function(event){
-
-      console.log("oy running")
-
       var d = Date(),
 
       thoughtObject = {

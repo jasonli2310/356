@@ -1,6 +1,6 @@
 const Product = require('../models/product.model');
 const Thought = require('../models/product.model');
-//const Comment = require('../models/product.model');
+const Comment = require('../models/product.model');
 
 
 //Simple version, without validation or sanitation
@@ -86,11 +86,10 @@ exports.product_update = function(req, res){
 
 
   // COMMENT FUNCTIONS
-
-  exports.comment_send = function(req, res) {
+  exports.comment_create = function(req, res) {
     let comment = new Comment(
       {
-        paragraphId: req.body.paragraphid,
+        paragraphId: req.body.paragraphId,
         message: req.body.message,
         location: req.body.location,
         fullDate: req.body.fullDate
@@ -98,6 +97,6 @@ exports.product_update = function(req, res){
     );
 
     comment.save();
-    console.log('comment saved')
+    console.log('comment saved!!')
     res.send('comment saved')
   };

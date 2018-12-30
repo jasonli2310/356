@@ -26,7 +26,7 @@
         <div class="words">
           I spent my first Sunday in Boston at a smoke shop with Domingo, the shop owner. Between 1 and 5PM, thirteen people spent an average of seven dollars each. I’ve never worked in retail before. A slim asian man came to fix his vape but left with a new one altogether. I would later find out he’s the host who gives Stephen free thai iced teas at the restaurant next door. Another older woman negotiated for a pack of free cigarettes. Her end of the deal arrived a few hours later in paper bags raised high above her head, as she now sported a triumphant Shake Shack uniform. Domingo and I and ShakeShack lady shared a blunt before I biked home in the dark.
         </div>
-        <button class="commentButton" v-on:click="currentParagraphId = 'paragraph1', showModal=true">
+        <button class="openModalButton" v-on:click="currentParagraphId = 'paragraph1', showModal=true">
           <i class="far fa-comment" aria-hidden="true"></i>
         </button>
       </div>
@@ -35,40 +35,27 @@
         <div class="words">
           “There seems to be hope of finding friends in this town,” I thought, but so far they didn’t look like the ivy league students I was used to being around. My mind wandered further, questioning the root of my curiosity and my identity, particularly if these were the people I evidently chose to spend my weekend with. Is it rare to suddenly be in a place without knowing anyone? Perhaps this is what having a past life feels like. I went to bed confused and frankly, more scared than I’ve been before.
         </div>
-        <button class="commentButton" v-on:click="currentParagraphId = 'paragraph2', showModal=true">
+        <button class="openModalButton" v-on:click="currentParagraphId = 'paragraph2', showModal=true">
           <i class="far fa-comment" aria-hidden="true"></i>
         </button>
       </div>
 
       <div id="commentModal" class="modal" v-bind:class="{ modalActive: showModal}" v-on:click="closeModal">
-
-        <!-- Modal content -->
         <div class="modal-content" >
-          <div class="modal-header">
-            <span class="close" v-on:click="showModal = false">&times;</span>
-            <h2>Modal Header</h2>
-          </div>
-          <div class="modal-body">
-            <p>Some text in the Modal Body</p>
-            <p>Some other text...</p>
-          </div>
-          <div class="modal-footer">
-            <h3>Modal Footer</h3>
+          <div class="modal-body display-flex">
+            <div class="center padding10 commentInputItem">
+              <input id="commentInputField" class="commentInputField fontsize40" v-model="message" type="text" name="" value="" placeholder="whatcha thinkin" onfocus="this.placeholder = ''">
+            </div>
+              <div class="commentSendItem">
+                <button type="button" name="button" class="sendbutton" v-on:click="postComment">send</button>
+              </div>
           </div>
         </div>
+      </div><!--end modal -->
 
-      </div>
     </div>
-
-
-
-
   </div>
-
-
-
 </body>
-
 
 <script>
 
@@ -78,15 +65,34 @@ var vm = new Vue({
     items: [],
     currentParagraphId: 0,
     showModal: false,
-    modalVariable: 1
+    modalVariable: 1,
+    message: '',
   },
   methods: {
     closeModal: function (){
       console.log('closing modal here')
       if (event.target.id == 'commentModal' ) {
         this.showModal = false
+        document.getElementById('commentInputField').placeholder = 'whatcha thinkin'
+      }
+    },
+
+    postComment: function(event){
+      console.log('comment posted??')
+
+      var d = Date();
+
+      commentObject = {
+        paragraphId: this.currentParagraphId,
+        message: this.message,
+        location: this.location,
+        fullDate: d
       }
 
+      //console.log(commentObject)
+      axios.post('/products/createComment', commentObject);
+      console.log("posted successfully")
+      this.message = '';
     }
   },
   created: function () {
