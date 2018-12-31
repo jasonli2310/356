@@ -92,11 +92,21 @@ h3{
   padding: 0px 20px;
   margin-right: auto;
   margin-left: auto;
+  font-weight: bolder;
+}
 
+.subtitle{
+  font-size: 17px;
+  display: flex;
+  justify-content: center;
+  padding: 0px 20px;
+  margin-right: auto;
+  margin-left: auto;
 }
 .paragraph{
   margin-top: 28px;
 }
+
 
 .words{
   max-width: 800px;
@@ -109,6 +119,9 @@ h3{
   align-self: center;
 }
 
+.align-items-center{
+  align-items: center;
+}
 
 .paragraph-container{
   display: flex;
@@ -118,7 +131,7 @@ h3{
 }
 
 .openModalButton{
-  color: #e0e0e0;
+  color: #8d8d8d;
   font-size: 23px;
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
@@ -129,12 +142,12 @@ h3{
   display: flex;
 }
 
-.commentInputItem{
-
-}
-
 .commentSendItem{
   align-self: flex-end;
+}
+
+.center-important{
+  margin: auto!important;
 }
 
 /* COMMENT MODAL */
@@ -160,7 +173,6 @@ h3{
   display: block;
 }
 
-
 .modal-content {
   position: fixed;
   bottom: 0;
@@ -170,21 +182,6 @@ h3{
   -webkit-animation-duration: 0.4s;
   animation-name: slideIn;
   animation-duration: 0.4s
-}
-
-/* The Close Button */
-.close {
-  color: white;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
 }
 
 .modal-header {

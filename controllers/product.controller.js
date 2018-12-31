@@ -52,16 +52,6 @@ exports.allpost = function(req, res){
   }).sort({_id:-1})
 };
 
-// exports.allthought = function(req, res){
-//
-//   Thought.find({}, function (error, thoughts) {
-//     if (error) { console.error(error); }
-//     res.send({
-//       thought: thoughts
-//     })
-//   }).sort({_id:-1})
-// }
-
 
 exports.product_details = function(req, res){
   Product.findById(req.params.id, function(err, product) {

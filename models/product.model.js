@@ -24,13 +24,6 @@ let CommentSchema = new Schema({
   fullDate: {type: String}
 })
 
-
-//let MessageMeta = new Schema()
 module.exports = mongoose.model('Product', ProductSchema);
 module.exports = mongoose.model('Thought', ThoughtSchema);
 module.exports = mongoose.model('Comment', CommentSchema);
-
-
-// module.exports = mongoose.model('Thought', ThoughtSchema);
- //Registers our schema with mongoose.
-// Model accessed via mongoose.model('User')
