@@ -1,20 +1,25 @@
 /* font-family: 'Roboto', sans-serif; */
 /* font-family: 'Crimson Text', serif; */
 
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: #60B78799;
-    opacity: 1; /* Firefox */
+.thoughtInputField:placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #60B78799;
+  opacity: 1; /* Firefox */
+}
+
+.commentInputField:placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: ##373737;
+  opacity: 1; /* Firefox */
 }
 
 input:focus,
 select:focus,
 textarea:focus,
 button:focus {
-    outline: none;
+  outline: none;
 }
 
-body{
-background-color: #264E2E;
+.greenbackground{
+  background-color: #264E2E;
 }
 
 button{
@@ -29,7 +34,6 @@ input{
   width: 100%;
   background: transparent;
   style: none;
-  color: #60B78799;
   border: none;
   font-weight: 500;
   border-bottom: 1px;
@@ -41,11 +45,13 @@ h3{
 
 .output{
   color: #60B78799;
+}
+/* classes  */
+.thoughtInputField{
+  color: #60B78799;
 
 }
 
-
-/* classes  */
 .sendbutton{
   color: #60B78799;
   font-size: 40px;
@@ -67,10 +73,152 @@ h3{
   font-size: 40px;
 }
 .padding10{
-padding: 10px;
+  padding: 10px;
 }
 
 .center {
-    margin: auto;
-    width: 75%;
+  margin: auto;
+  width: 75%;
+}
+
+
+
+/* WRITING STYLES */
+.title{
+  font-size: 22px;
+  display: flex;
+  justify-content: center;
+  margin-top: 28px;
+  padding: 0px 20px;
+  margin-right: auto;
+  margin-left: auto;
+  font-weight: bolder;
+}
+
+.subtitle{
+  font-size: 17px;
+  display: flex;
+  justify-content: center;
+  padding: 0px 20px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.paragraph{
+  margin-top: 28px;
+}
+
+
+.words{
+  max-width: 800px;
+  font-size: 22px;
+  line-height: 1.58;
+  letter-spacing: -.003em;
+  color: #444444;
+  margin-left: auto;
+  margin-right: 100px;
+  align-self: center;
+}
+
+.align-items-center{
+  align-items: center;
+}
+
+.paragraph-container{
+  display: flex;
+  /* justify-content: left; */
+  margin: 28px auto 10px auto;
+  padding: 0px 20px;
+}
+
+.openModalButton{
+  color: #8d8d8d;
+  font-size: 23px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  align-self:flex-end;
+}
+
+.display-flex{
+  display: flex;
+}
+
+.commentSendItem{
+  align-self: flex-end;
+}
+
+.center-important{
+  margin: auto!important;
+}
+
+/* COMMENT MODAL */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  -webkit-animation-name: fadeIn; /* Fade in the background */
+  -webkit-animation-duration: 0.4s;
+  animation-name: fadeIn;
+  animation-duration: 0.4s
+}
+
+/* Modal Content */
+.modalActive{
+  display: block;
+}
+
+.modal-content {
+  position: fixed;
+  bottom: 0;
+  background-color: #fefefe;
+  width: 100%;
+  -webkit-animation-name: slideIn;
+  -webkit-animation-duration: 0.4s;
+  animation-name: slideIn;
+  animation-duration: 0.4s
+}
+
+.modal-header {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+}
+
+.commentInputField{
+  color: #003d00;
+}
+
+/* Add Animation */
+@-webkit-keyframes slideIn {
+  from {bottom: -300px; opacity: 0}
+  to {bottom: 0; opacity: 1}
+}
+
+@keyframes slideIn {
+  from {bottom: -300px; opacity: 0}
+  to {bottom: 0; opacity: 1}
+}
+
+@-webkit-keyframes fadeIn {
+  from {opacity: 0}
+  to {opacity: 1}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0}
+  to {opacity: 1}
 }

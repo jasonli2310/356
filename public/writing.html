@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="bootstrap.css">
+  <link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,400i,600,700|Roboto:300,400,500,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+
+  <title></title>
+</head>
+<body>
+  <div class="container">
+    <div id="story">
+
+      <div class="paragraph-container">
+        <div class="title">
+          On Loneliness
+        </div>
+        <br>
+      </div>
+      <div class="paragraph-container" id="a1p1"> <!--article1paragraph2 -->
+        <div class="words">
+          I spent my first Sunday in Boston at a smoke shop with Domingo the shop owner. Between 1 and 5PM, thirteen people spent an average of seven dollars each. I’ve never worked in retail before. A slim asian man, who I later learned is the host that gives Stephen free Thai iced teas at the restaurant next door, he came to fix his vape but left with a new one altogether. A younger woman negotiated for a pack of free cigarettes. Her end of the deal arrived a few hours later in paper bags raised high above her head while she sported a triumphant Shake Shack uniform. Domingo, Shake Shack lady, and I shared a blunt before I biked home in the dark.
+        </div>
+        <button class="openModalButton" v-on:click="currentParagraphId = 'a1p1', showModal=true">
+          <i class="far fa-comment" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <div class="paragraph-container" id="a1p2">
+        <div class="words">
+          “There seems to be hope of finding friends in this town,” I thought, but so far they didn’t look like the ivy league students I’ve become accustomed to. My mind wandered further, questioning the curiosity that kept me at a smoke shop all afternoon and the people I evidently chose to spend my weekend freedom with. Is it rare to suddenly be in a place without knowing anyone? I went to bed confused and frankly, more scared than I’ve been before.
+        </div>
+        <button class="openModalButton" v-on:click="currentParagraphId = 'a1p2', showModal=true">
+          <i class="far fa-comment" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <!-- PHOTO -->
+      <div class="paragraph-container align-items-center">
+        <img class="center-important" width="85%" src="https://imgur.com/dyrozf2.jpg" alt="">
+      </div>
+      <br>
+
+      <div class="paragraph-container" id="a1p3">
+        <div class="words">
+          Until now, episodes of existential angst have all been about the future. But having started my first job a week ago, after leaving college three weeks ago, after getting the offer five weeks ago, I too quickly became the person that a past me worried for. You see, the first 19 years of a child born to asian parents who immigrate to Cupertino is damn predictable. If we think of it as a vector, parents and school set the direction and I, the magnitude. From piano lessons to college coursework, everything fed to me was pre-approved and determined to be of value. As a result, critical thought regarding life decisions wasn’t required to be successful. But in this real world, in a foreign city with no friends, I couldn’t avoid the confrontation of defining my self worth. No more student awards or test scores to supply validation. No more like-minded peers to hide behind, from insecurities.
+        </div>
+        <button class="openModalButton" v-on:click="currentParagraphId = 'a1p3', showModal=true">
+          <i class="far fa-comment" aria-hidden="true"></i>
+        </button>
+      </div>
+
+
+
+      <!-- PHOTO -->
+      <div class="paragraph-container align-items-center">
+        <img class="center-important" width="85%" src="https://imgur.com/mBcQxpd.jpg" alt="">
+      </div>
+      <br>
+
+      <div class="paragraph-container" id="a1p4">
+        <div class="words">
+          The first couple weeks in Boston were fucking lonely. I’ve never not lived with family or best friends. I found craigslist descriptions as roommates that somehow barely developed into real people. On the third floor of a Cambridge duplex, most of my wall slanted to shape the roof but the room fit a twin mattress topper and a beanbag. As a result of spending so much time on the floor, I stretched more. Stretching is so important. I found solace in the psychedelic melancholy sounds of Rex, the simultaneously obscure and comforting chords of Tyler. I decided silence is scarier than the dark but we just don’t know because it’s harder to imagine.
+        </div>
+        <button class="openModalButton" v-on:click="currentParagraphId = 'a1p4', showModal=true">
+          <i class="far fa-comment" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <div class="paragraph-container" id="a1p5">
+        <div class="words">
+          Biking along the Charles was the fastest way to reach Copley Square five mornings a week. I loved biking as a kid and I found out I still do. I always thought it was a couples trope to not be able to decide where to go for dinner, until the many nights it took me an hour to choose just for myself. Guess I didn’t need a significant other to not know what I want.
+        </div>
+        <button class="openModalButton" v-on:click="currentParagraphId = 'a1p5', showModal=true">
+          <i class="far fa-comment" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <div class="paragraph-container" id="a1p6">
+        <div class="words">
+          I bought a camera and started taking pictures on weekends and some evenings. My photos gravitated towards people. There’s a thrill to approaching strangers and a palpable tenderness that can be captured. Even after I hit em’ with a friendly wave, most people are at least hesitant to give me their portrait. But I’ll tell them they look good and it’s funny because almost everyone blushes, “all right, fine” — even those who said no at first. I later began sending them the photos if they wanted a copy. Cameras remind people of themselves in a way that eye contact can’t.
+        </div>
+        <button class="openModalButton" v-on:click="currentParagraphId = 'a1p6', showModal=true">
+          <i class="far fa-comment" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <div class="paragraph-container align-items-center">
+        <img class="center-important" width="85%" src="https://imgur.com/4W0DBSG.jpg" alt="">
+      </div>
+      <div class="paragraph-container align-items-center">
+        <img class="center-important" width="35%" src="https://imgur.com/AKbjlKJ.jpg" alt="">
+        <img class="center-important" width="35%" src="https://imgur.com/FB9aKLi.jpg" alt="">
+      </div>
+
+      <div class="paragraph-container align-items-center">
+        <img class="center-important" width="90%" src="https://imgur.com/dSG4P0e.jpg" alt="">
+      </div>
+
+      <div class="paragraph-container align-items-center">
+        <img class="center-important" width="85%" src="https://imgur.com/BIZqlmw.jpg" alt="">
+      </div>
+
+
+      <div class="paragraph-container align-items-center">
+        <img class="center-important" width="85%" src="https://imgur.com/9kOK3LJ.jpg" alt="">
+      </div>
+
+
+      <div class="paragraph-container" id="a1p7">
+        <div class="words">
+          Drugs attempt to offer a substitute for human interaction. In a way, they remind of close camaraderie and comfort. In high school, perched on a vista overlooking the valley, we’d so carefully grind the bud, pack the bowl, and hope the girl you crushed on didn’t notice you fumble with the lighter. Smoking is still an intimate activity. At the same time, it’s absurdly easy for a 21-year-old to find alcohol in the city, even on school nights.
+        </div>
+        <button class="openModalButton" v-on:click="currentParagraphId = 'a1p7', showModal=true">
+          <i class="far fa-comment" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <div class="paragraph-container" id="a1p8">
+        <div class="words">
+          One snowy dawn, my camera took me across the river to Beacon Hill in search of fresh-powder-on-acorn-street vibes. After a couple hours without any luck, I went to Peet’s only to decide I’d rather make free coffee at home. A woman sat alone by the window, reading the paper. The sun’s rays shined at an angle so conveniently, one might even think the woman came specifically to enjoy the repose of solitude. It struck me that being alone doesn’t necessarily imply loneliness, and vice versa.
+        </div>
+        <button class="openModalButton" v-on:click="currentParagraphId = 'a1p8', showModal=true">
+          <i class="far fa-comment" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="paragraph-container align-items-center">
+        <img class="center-important" width="90%" src="https://imgur.com/fZwtHYW.jpg" alt="">
+      </div>
+      <div class="paragraph-container align-items-center">
+        <img class="center-important" width="88%" src="https://imgur.com/05WNXg6.jpg" alt="">
+      </div>
+      <div class="paragraph-container align-items-center">
+        <img class="center-important" width="85%" src="https://imgur.com/qqYOJrZ.jpg" alt="">
+      </div><br>
+
+      <div class="paragraph-container" id="a1p9">
+        <div class="words">
+          Boston is a city of proud people, exemplified best by Italian restaurant owners and its runners. If anything, there are more runners in the winter. I witnessed the epic that is the Boston Marathon, and more than a feat of human achievement, it was a celebration of the catharsis that’s found in running.
+        </div>
+        <button class="openModalButton" v-on:click="currentParagraphId = 'a1p9', showModal=true">
+          <i class="far fa-comment" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <div class="paragraph-container" id="a1p10">
+        <div class="words">
+          The idea of actively seeking community crossed my mind but I wasn’t going to be a schmuck who attended networking events to meet other schmucks, and the dragon boat team I tried out for was too Chinese. Luckily, I met Todd from work. Todd did one of those month-long challenges like movember, only his goal was to write a novel. He plays guitar and reads like a fiend, but my favorite thing is how he once decided to study plants and can now recognize many by name.
+        </div>
+        <button class="openModalButton" v-on:click="currentParagraphId = 'a1p10', showModal=true">
+          <i class="far fa-comment" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <div class="paragraph-container" id="a1p11">
+        <div class="words">
+          Todd introduced me to bouldering and the idea that extracurriculars can be for more than getting into college or a job. Climbing is about postures we don’t take on daily, and the gyms are just like the playgrounds we gave up in 6th grade. The first few times, I could feel my brain and my body physically struggle to communicate across rusty nerves until something gives and I either jumped off the wall like a lil’ bitch or I reached for the next hold. When your fingers can’t fight gravity any longer is when you have to reach. Movement orthogonal to what we’re used to is a refreshing challenge by definition.
+        </div>
+        <button class="openModalButton" v-on:click="currentParagraphId = 'a1p11', showModal=true">
+          <i class="far fa-comment" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <div class="paragraph-container" id="a1p12">
+        <div class="words">
+          One morning I tried to loop on my belt through the other side. Changed my whole world view. The wait for a party of one is almost always “we have room at the bar” or “one at the table end”. It’s a convenient handicap for the alone. Sitting next to first dates have also never failed to provide a comical soundtrack to the dining experience, as well as a deeper understanding of people in New England, where small talk is easy because the weather is so complainable, so frequently.
+        </div>
+        <button class="openModalButton" v-on:click="currentParagraphId = 'a1p12', showModal=true">
+          <i class="far fa-comment" aria-hidden="true"></i>
+        </button>
+      </div>
+
+
+
+      <div class="paragraph-container" id="a1p13">
+        <div class="words">
+          I decided that growth happens gradually and silently, but if we’re lucky and attentive, or have no social obligations, we’re rewarded with recognizable instants of change. The first time a coworker opted out of Slack to text me the address of his party. The first flowers to bloom on the branches outside my window. The first boats on the Charles. I didn’t try very hard to find a friend to take me sailing this year, but I fully intend to control the wind and sea next spring. The first day I walked outside in a t-shirt. But remember, these are just perks and not growth itself.
+        </div>
+        <button class="openModalButton" v-on:click="currentParagraphId = 'a1p13', showModal=true">
+          <i class="far fa-comment" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <div class="paragraph-container align-items-center">
+        <img class="center-important" width="30%" src="https://imgur.com/GWQ4fUr.jpg" alt="">
+        <img class="center-important" width="60%" src="https://imgur.com/TmBWnXG.jpg" alt="">
+      </div>
+
+      <div class="paragraph-container align-items-center">
+        <img class="center-important" width="85%" src="https://imgur.com/pYoyk9j.jpg" alt="">
+      </div>
+
+      <div class="paragraph-container" id="a1p14">
+        <div class="words">
+          One upside of starting a job in the winter is that you can grind for the first few months. As you get the hang of things, the days correspond by getting longer and brighter. In June, I retrieved my degree in Economics from the University of Chicago, which means I can do Lagrangians but that’s about it.
+        </div>
+        <button class="openModalButton" v-on:click="currentParagraphId = 'a1p14', showModal=true">
+          <i class="far fa-comment" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <div class="paragraph-container" id="a1p15">
+        <div class="words">
+          The same month, I found a studio downtown and moved out of my room. Not having to worry about roommates relieved me. Perfect incentives excited me. I could omit anything that wasn’t of value. Friends tell me it’s weird my mattress is on the floor, or that I’m going to ruin it if I don’t get a box spring, but that’s exactly what bed frame companies want you to think. Moreover, different spaces encourage different behavior, so it’s important to have intent when decorating. I didn’t like the idea of sitting on a couch all day, so I held off on purchasing one for many weeks. Unfortunately guests like couches (and beverages) and I like guests. We all live in compromise.
+        </div>
+        <button class="openModalButton" v-on:click="currentParagraphId = 'a1p15', showModal=true">
+          <i class="far fa-comment" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <div class="paragraph-container" id="a1p16">
+        <div class="words">
+          Summer meant coastal roadtrips. I learned that Maine is a verb, that most of New York is north of Boston, and the Statue of Liberty is in New Jersey. So is Ellis Island. One day at the beach with Todd, I dealt myself a sunburn so bad it hurt to lie in bed. Another weekend I woke up with the urge to find out how much money I could make by dancing in public.
+        </div>
+        <button class="openModalButton" v-on:click="currentParagraphId = 'a1p16', showModal=true">
+          <i class="far fa-comment" aria-hidden="true"></i>
+        </button>
+      </div>
+
+
+      <div class="paragraph-container align-items-center">
+        <img class="center-important" width="85%" src="https://imgur.com/TbSKEgq.jpg" alt="">
+      </div>
+      <div class="paragraph-container align-items-center">
+        <img class="center-important" width="85%" src="https://imgur.com/RsecAKV.jpg" alt="">
+      </div>
+      <div class="paragraph-container align-items-center">
+        <img class="center-important" width="85%" src="https://imgur.com/JsCdKl2.jpg" alt="">
+      </div>
+
+      <div class="paragraph-container align-items-center">
+        <img class="center-important" width="89%" src="https://imgur.com/7iaeRx1.jpg" alt="">
+      </div>
+
+      <div class="paragraph-container" id="a1p17">
+        <div class="words">
+          My mom called one evening. It drops before I could pick it up and switches to Facetime before I could put it back in my pocket. When I saw her face and significantly more gray hairs than I remembered, I almost cried. With recently developed dimmed vision, she peeked over her glasses to talk to me. I never missed my family because the cadence of school made it easy to visit. Now a flight to California takes longer than going to Portugal, and time spent with family by default in the past became a choice. For a couple years after we moved to America, my grandparents in China would call weekly and my mom would always pick up, say hi, hang-up, and dial right back. This way, we get charged the phone bill. As a kid I asked my mom what’s her biggest fear.
+        </div>
+        <button class="openModalButton" v-on:click="currentParagraphId = 'a1p17', showModal=true">
+          <i class="far fa-comment" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <div class="paragraph-container" id="a1p18">
+        <div class="words">
+          She told me, “When you grow up, not knowing where you are, not knowing how to reach you.”
+        </div>
+        <button class="openModalButton" v-on:click="currentParagraphId = 'a1p18', showModal=true">
+          <i class="far fa-comment" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <div class="paragraph-container" id="a1p19">
+        <div class="words">
+          By now I’ve become really good at hanging out with myself and genuinely think it’s a skill to be coveted. Along with its proficiency comes a rooted confidence, similar to what empowers a homeless person to spew crazy person words on the street.
+        </div>
+        <button class="openModalButton" v-on:click="currentParagraphId = 'a1p19', showModal=true">
+          <i class="far fa-comment" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <div class="paragraph-container" id="a1p20">
+        <div class="words">
+          In September, I met a girl at the grocery store. Sarah loved grocery shopping and so did I. We met up a few days later at Felipe’s in Harvard. She rocked a pair of NMDs, the same shoes I bought once and returned a day later after realizing I wasn’t cool enough to wear them. We walked back to the city and I was spitting my best game, flowing off. the. dome. Sarah asked delightfully curious questions and every topic of debate was garnished with anecdotes from our past lives. She was so pretty, so witty, so funny, so opinionated. And soo pretty.
+        </div>
+        <button class="openModalButton" v-on:click="currentParagraphId = 'a1p20', showModal=true">
+          <i class="far fa-comment" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <!-- PHOTO -->
+      <div class="paragraph-container align-items-center">
+        <img class="center-important" width="85%" src="https://imgur.com/QkXhRsz.jpg" alt="">
+      </div>
+
+      <div class="paragraph-container" id="a1p21">
+        <div class="words">
+          We made casual plans to go to Norway, Burning Man — the type of plans you don’t expect to realize but sometimes, including someone in your imagination of the future can be fun in itself. I was fascinated by her artless commitment to pressing crosswalk buttons. At particularly funny jokes, she’d pull her collar over her lips and stop in her tracks to fully cherish the joy she found. Before the last stretch of the river, we stopped and sat and talked amid the September air. She leaned in close enough for me to catch her scent, reminding me of Stevie Wonder’s rendition of Close to You, the one where it clearly takes the audience a moment to register the fleeting beauty of the distorted soundscape. Stephen and I took the same walk along the Charles when I visited a couple weeks before moving. It was his final year at Harvard.
+        </div>
+        <button class="openModalButton" v-on:click="currentParagraphId = 'a1p21', showModal=true">
+          <i class="far fa-comment" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <div class="paragraph-container" id="a1p22">
+        <div class="words">
+          “You can fall in love in this city. You can fall in love by this river.” he told me. And when I did, it had been so long that I forgot to hedge my emotional investments.
+        </div>
+        <button class="openModalButton" v-on:click="currentParagraphId = 'a1p22', showModal=true">
+          <i class="far fa-comment" aria-hidden="true"></i>
+        </button>
+      </div>
+
+
+      <div class="paragraph-container" id="a1p23">
+        <div class="words">
+          A week later, I asked Sarah to accompany me to a talk by this prominent artist and she even said yes! By the time I got on the website to buy tickets, general admissions had sold out but she was worth the price of preferred seating. When I checked the email receipt however, it turns out I had gotten the last one, but only one. sad.
+        </div>
+        <button class="openModalButton" v-on:click="currentParagraphId = 'a1p23', showModal=true">
+          <i class="far fa-comment" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <div class="paragraph-container" id="a1p24">
+        <div class="words">
+          We did end up going to a museum at some point, one in western Massachusetts. One I wore cologne for and rented a car for. One that became the setting of another disappointment when we lost each other after 20 minutes, only to meet again at closing time. We never went on another date, but she liked me at some point. She told me. And that makes me happy enough.
+        </div>
+        <button class="openModalButton" v-on:click="currentParagraphId = 'a1p24', showModal=true">
+          <i class="far fa-comment" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <div class="paragraph-container align-items-center">
+        <img class="center-important" width="85%" src="https://imgur.com/DpKFBf2.jpg" alt="">
+      </div>
+
+      <div class="paragraph-container" id="a1p25">
+        <div class="words">
+          Dinner the night before Black Friday, mine and two other families gathered at Hannah and Sam’s house in Sunnyvale, California. Asian parents have a tendency to pointedly show affection for other kids in front of their own children and in my parents’ eyes, Hannah was the Lebron James of piano and academics since the first grade. All of that made asking about her new job at Microsoft feel science fiction. We’re real people now! Our parents used to stand us back to back and compare our heights to kickoff these family-friend parties, and we would play until two in the morning while they chipped sunflower seeds, laughing, poker cards on the table. In the couple of days I had with family, I made sure to ask my dad unproductive questions, cook with my mom, and take my sister on my favorite drive through the Santa Cruz mountains, before leaving California to fly home.
+        </div>
+        <button class="openModalButton" v-on:click="currentParagraphId = 'a1p25', showModal=true">
+          <i class="far fa-comment" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <!-- PHOTO -->
+      <div class="paragraph-container align-items-center">
+        <img class="center-important" width="80%" src="https://imgur.com/Rro6Qk6.jpg" alt="">
+      </div>
+
+      <div class="paragraph-container" id="a1p26">
+        <div class="words">
+          The Wilson’s couldn’t get their shit together before November ended so we had friends-giving on December 2nd. Our group of mostly co-workers shared embarrassing stories over mulled wine and the best Thanksgiving meal I’ve had. A handful of us shared a spliff in the backyard where I met Alex, who started his own bagelry after graduating a couple years ago. I asked him why he chose to do that.
+        </div>
+        <button class="openModalButton" v-on:click="currentParagraphId = 'a1p26', showModal=true">
+          <i class="far fa-comment" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <div class="paragraph-container" id="a1p27">
+        <div class="words">
+          “There just aren’t a lot of good bagels in Boston” he smiles.
+        </div>
+        <button class="openModalButton" v-on:click="currentParagraphId = 'a1p27', showModal=true">
+          <i class="far fa-comment" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <div class="paragraph-container" id="a1p28">
+        <div class="words">
+          The next weekend, I visited his shop, bought some bagels, and took some pictures. I’ve never eaten so many bagels in a day.
+        </div>
+        <button class="openModalButton" v-on:click="currentParagraphId = 'a1p28', showModal=true">
+          <i class="far fa-comment" aria-hidden="true"></i>
+        </button>
+      </div>
+
+
+
+      <div class="paragraph-container align-items-center">
+        <img class="center-important" width="50%" src="https://imgur.com/eD2OgIL.jpg" alt="">
+      </div>
+
+
+      <div class="paragraph-container">
+        <div class="title">
+          Last updated Dec. 30, 2018
+        </div>
+        <br>
+      </div>
+
+
+      <!-- COMMENT MODAL -->
+      <div id="commentModal" class="modal" v-bind:class="{ modalActive: showModal}" v-on:click="closeModal">
+        <div class="modal-content" >
+          <div class="modal-body display-flex">
+            <div class="center padding10 commentInputItem">
+              <input id="commentInputField" class="commentInputField fontsize40" v-model="message" type="text" name="" value="" placeholder="whatcha thinkin" onfocus="this.placeholder = ''">
+            </div>
+            <div class="commentSendItem">
+              <button type="button" name="button" class="sendbutton" v-on:click="postComment">send</button>
+            </div>
+          </div>
+        </div>
+      </div><!--end modal -->
+
+    </div>
+  </div>
+</body>
+
+<script>
+
+var vm = new Vue({
+  el: '#story',
+  data: {
+    items: [],
+    currentParagraphId: 0,
+    showModal: false,
+    modalVariable: 1,
+    message: '',
+  },
+  methods: {
+    closeModal: function (){
+      console.log('closing modal here')
+      if (event.target.id == 'commentModal' ) {
+        this.showModal = false
+        document.getElementById('commentInputField').placeholder = 'whatcha thinkin'
+      }
+    },
+
+    postComment: function(event){
+      console.log('comment posted??')
+      var d = Date();
+      commentObject = {
+        paragraphId: this.currentParagraphId,
+        message: this.message,
+        location: this.location,
+        fullDate: d
+      }
+      //console.log(commentObject)
+      axios.post('/products/createComment', commentObject);
+      //console.log("posted successfully")
+      this.message = '';
+      //  document.getElementById('commentInputField').placeholder = 'whatcha thinkin'
+    }
+  },
+  created: function () {
+    // `this` points to the vm instance
+    axios.get('/products/posts').then(function(response){
+
+      console.log("hey there")
+      console.log(response.data)
+      vm.items = response.data.thoughts;
+    });
+  }
+})
+</script>
+</html>

@@ -16,11 +16,14 @@ let ThoughtSchema = new Schema({
 }); //creates createdAt and updateAt
 
 
-//let MessageMeta = new Schema()
+// this comment schema is only for the first story, not ThoughtSchema
+let CommentSchema = new Schema({
+  paragraphId: {type: String, required: true},
+  message: {type: String, required: true},
+  location: {type: String},
+  fullDate: {type: String}
+})
+
 module.exports = mongoose.model('Product', ProductSchema);
 module.exports = mongoose.model('Thought', ThoughtSchema);
-
-
-// module.exports = mongoose.model('Thought', ThoughtSchema);
- //Registers our schema with mongoose.
-// Model accessed via mongoose.model('User')
+module.exports = mongoose.model('Comment', CommentSchema);
