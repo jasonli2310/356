@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="bootstrap.css">
+  <link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,400i,600,700|Roboto:300,400,500,700" rel="stylesheet">
+
+
+  <title></title>
+</head>
+<body class="greenbackground">
+  <div class="container" id="example">
+
+    <div class="row margintop50">
+      <div class="center padding10">
+        <input class="thoughtInputField fontsize40" v-model="message" type="text" name="" value="" placeholder="whatcha thinkin" onfocus="this.placeholder = ''">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="floatright">
+        <button type="button" name="button" class="sendbutton" v-on:click="postMessage">send</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+<script>
+
+var vm = new Vue({
+  el: '#example',
+  data: {
+    items: [],
+    message: '',
+    author: ''
+
+  },
+  methods: {
+    postMessage: function(event){
+      var d = Date(),
+
+      thoughtObject = {
+        message: this.message,
+        author: this.author,
+        fullDate: d,
+        location: this.location,
+        responses: this.responses
+      }
+
+      console.log(thoughtObject)
+    //  axios.post('/products/create', testObject);
+      axios.post('/products/create2', thoughtObject);
+      this.message = '';
+    }
+  },
+  created: function () {
+  // `this` points to the vm instance
+  axios.get('/products/posts').then(function(response){
+    console.log(response.data.product);
+    vm.items = response.data.product;
+  });
+}
+})
+
+
+
+function performGetRequest2() {
+
+let vue = vm.data.message
+
+testObject = {
+  name: vue.data.message,
+  price: 4
+}
+
+axios.post('/products/create', testObject);
+}
+</script>
+</html>
